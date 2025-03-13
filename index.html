@@ -6,78 +6,74 @@
   <title>KidBoom - Home</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
       padding: 20px;
-      background-color: #f5f5f5; /* Light gray background */
+      background-color: #FFFFFF; /* Pure white background */
       text-align: center;
       line-height: 1.6;
     }
     header {
-      background-color: #4CAF50; /* Calming green header */
+      background-color: #2E7D32; /* Darker green header */
       color: white;
       padding: 15px;
-      border-radius: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     h1 {
-      font-family: 'Comic Sans MS', Arial, sans-serif;
-      color: #4CAF50; /* Green for headings */
+      font-family: 'Comic Sans MS', 'Roboto', Arial, sans-serif;
+      color: #2E7D32; /* Darker green for headings */
       font-size: 2.5em;
       margin: 0;
     }
     p {
       font-size: 1.2em;
-      color: #333333; /* Dark gray text */
+      color: #212121; /* Near-black text */
       margin: 15px 0;
     }
     a {
-      color: #1E88E5; /* Softer blue links */
+      color: #1976D2; /* Deeper blue links */
       text-decoration: none;
       font-weight: bold;
     }
     a:hover {
       text-decoration: underline;
-      color: #1565C0; /* Darker blue on hover */
+      color: #0D47A1; /* Darker blue on hover */
     }
     .placeholder-img {
       width: 100%;
       max-width: 400px;
       height: auto;
-      background-color: #e0e0e0; /* Light gray placeholder */
-      border: 2px dashed #4CAF50;
+      background-color: #F5F5F5; /* Light gray placeholder */
+      border: 2px dashed #B0BEC5; /* Soft gray-blue border */
       margin: 20px auto;
       padding: 20px;
-      color: #333333;
+      color: #212121;
       font-style: italic;
     }
     button {
-      background-color: #FFCA28; /* Soft yellow button */
-      color: #333333;
+      background-color: #0288D1; /* Medium blue button */
+      color: white;
       padding: 10px 20px;
       border: none;
       border-radius: 5px;
       font-size: 1em;
       cursor: pointer;
+      transition: background-color 0.3s;
     }
     button:hover {
-      background-color: #FFB300; /* Darker yellow on hover */
+      background-color: #0277BD; /* Slightly darker blue on hover */
     }
     #fact {
       display: none;
       font-size: 1.1em;
-      color: #4CAF50;
+      color: #2E7D32;
       margin-top: 10px;
     }
     @media (max-width: 600px) {
-      h1 {
-        font-size: 2em;
-      }
-      p {
-        font-size: 1em;
-      }
-      .placeholder-img {
-        max-width: 100%;
-      }
+      h1 { font-size: 2em; }
+      p { font-size: 1em; }
+      .placeholder-img { max-width: 100%; }
     }
   </style>
 </head>
@@ -85,7 +81,7 @@
   <header>
     <h1>Welcome to KidBoom!</h1>
   </header>
-  <p>Kids Rock, Parents Chill with fun ideas and activities. Explore our <a href="blog.html">Blog</a> for more!</p>
+  <p>Kids Rock, Parents Chill with fun ideas and activities. Explore our <a href="ideas.html">Ideas</a> or <a href="blog.html">Blog</a> for more!</p>
   <div class="placeholder-img">Placeholder for a fun image (e.g., kids playing)</div>
   <button onclick="showFact()">Click for a Fun Fact!</button>
   <p id="fact">Kids love colorful toys!</p>
