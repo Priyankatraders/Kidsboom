@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -67,10 +67,60 @@
       font-size: 0.9em;
       color: #757575;
     }
+    nav {
+      background: #FFFFFF;
+      padding: 10px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      font-size: 1.1em;
+      padding: 8px 15px;
+      border-radius: 5px;
+    }
+    nav ul li a:hover {
+      background: #E8F5E9;
+    }
+    .hamburger {
+      display: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      color: #2E7D32;
+      padding: 10px;
+    }
     @media (max-width: 600px) {
       h1 { font-size: 2.2em; }
       p { font-size: 1.1em; }
       .placeholder-img { max-width: 100%; height: 200px; }
+      .hamburger { display: block; }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #FFFFFF;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      nav ul.active {
+        display: flex;
+      }
+      nav ul li {
+        margin: 10px 0;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -78,10 +128,26 @@
   <header>
     <h1>KidBoom Blog</h1>
   </header>
-  <p>Looking for a fun weekend activity? Try a family scavenger hunt—it’s a blast for kids and gives parents a chance to relax. <a href="[insert your scavenger hunt kit affiliate link here]">Find Scavenger Hunt Kits on Amazon</a>. Return to <a href="index.html">Home</a>, explore <a href="tips.html">Tips</a>, <a href="activities.html">Activities</a>, or <a href="ideas.html">Ideas</a>.</p>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <nav>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tips.html">Tips</a></li>
+      <li><a href="activities.html">Activities</a></li>
+      <li><a href="ideas.html">Ideas</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </nav>
+  <p>Looking for a fun weekend activity? Try a family scavenger hunt—it’s a blast for kids and gives parents a chance to relax. <a href="[insert your scavenger hunt kit affiliate link here]">Find Scavenger Hunt Kits on Amazon</a>.</p>
   <div class="placeholder-img">Animated placeholder (add a real scavenger hunt image here)</div>
   <footer>
     <p>© 2025 KidBoom | <a href="mailto:contact@kidsboom.blog">Contact Us</a></p>
   </footer>
+  <script>
+    function toggleMenu() {
+      let menu = document.getElementById("nav-menu");
+      menu.classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
