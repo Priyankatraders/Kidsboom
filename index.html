@@ -9,13 +9,13 @@
       font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
       padding: 20px;
-      background: linear-gradient(to bottom, #E8F5E9, #FFFFFF); /* Gradient background */
+      background: linear-gradient(to bottom, #E8F5E9, #FFFFFF);
       text-align: center;
       line-height: 1.6;
       min-height: 100vh;
     }
     header {
-      background: linear-gradient(to right, #2E7D32, #66BB6A); /* Green gradient header */
+      background: linear-gradient(to right, #2E7D32, #66BB6A);
       color: white;
       padding: 20px;
       border-radius: 15px;
@@ -49,7 +49,7 @@
       width: 100%;
       max-width: 450px;
       height: 250px;
-      background: linear-gradient(45deg, #F5F5F5, #E0F2F1); /* Animated gradient placeholder */
+      background: linear-gradient(45deg, #F5F5F5, #E0F2F1);
       border: 3px dashed #B0BEC5;
       margin: 20px auto;
       padding: 20px;
@@ -63,7 +63,7 @@
       100% { transform: scale(1); }
     }
     button {
-      background: linear-gradient(to right, #0288D1, #039BE5); /* Blue gradient button */
+      background: linear-gradient(to right, #0288D1, #039BE5);
       color: white;
       padding: 12px 25px;
       border: none;
@@ -80,7 +80,7 @@
     #fact {
       display: none;
       font-size: 1.2em;
-      color: #F06292; /* Soft pink for fun facts */
+      color: #F06292;
       margin-top: 10px;
       padding: 10px;
       background: #FFF3E0;
@@ -91,10 +91,62 @@
       font-size: 0.9em;
       color: #757575;
     }
+    /* Menu Bar Styles */
+    nav {
+      background: #FFFFFF;
+      padding: 10px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      font-size: 1.1em;
+      padding: 8px 15px;
+      border-radius: 5px;
+    }
+    nav ul li a:hover {
+      background: #E8F5E9;
+    }
+    /* Hamburger Menu for Mobile */
+    .hamburger {
+      display: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      color: #2E7D32;
+      padding: 10px;
+    }
     @media (max-width: 600px) {
       h1 { font-size: 2.2em; }
       p { font-size: 1.1em; }
       .placeholder-img { max-width: 100%; height: 200px; }
+      .hamburger { display: block; }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #FFFFFF;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      nav ul.active {
+        display: flex;
+      }
+      nav ul li {
+        margin: 10px 0;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -102,17 +154,31 @@
   <header>
     <h1>Welcome to KidBoom!</h1>
   </header>
-  <p>Kids Rock, Parents Chill with fun ideas and activities. Explore our <a href="tips.html">Tips</a>, <a href="activities.html">Activities</a>, <a href="ideas.html">Ideas</a>, or <a href="blog.html">Blog</a> for more!</p>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <nav>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tips.html">Tips</a></li>
+      <li><a href="activities.html">Activities</a></li>
+      <li><a href="ideas.html">Ideas</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </nav>
+  <p>Kids Rock, Parents Chill with fun ideas and activities. Explore our pages for more!</p>
   <div class="placeholder-img">Animated placeholder (add a real image of kids playing here)</div>
   <button onclick="showFact()">Click for a Fun Fact!</button>
   <p id="fact">Kids love colorful toys!</p>
   <footer>
-    <p>&copy; 2025 KidBoom | <a href="mailto:contact@kidsboom.blog">Contact Us</a></p>
+    <p>© 2025 KidBoom | <a href="mailto:contact@kidsboom.blog">Contact Us</a></p>
   </footer>
   <script>
     function showFact() {
       let fact = document.getElementById("fact");
       fact.style.display = fact.style.display === "none" ? "block" : "none";
+    }
+    function toggleMenu() {
+      let menu = document.getElementById("nav-menu");
+      menu.classList.toggle("active");
     }
   </script>
 </body>
